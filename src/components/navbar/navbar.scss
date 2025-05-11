@@ -1,0 +1,46 @@
+.navbar{
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0,47,52,0.03);
+    position: sticky;
+    top: 0;
+    width: 100vw;
+}
+
+.olxLogo{
+    width: 60px;
+}
+
+.locationInput{
+    width: 20%;
+    height: 50px;
+    border: 2px solid black;
+    padding: 0 0 0 20px;
+    border-radius: 5px;
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.searchProduct{
+    width: 50%;
+    height: 50px;
+    border: 2px solid black;
+    padding: 0 0 0 20px;
+    border-radius: 5px;
+    @media (max-width: 768px) {
+        width: 20%;
+        height: 25px;
+    }
+}
+
+.addProduct{
+    width: 100px;
+    &:hover{
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        width: 70px;
+    }
+}

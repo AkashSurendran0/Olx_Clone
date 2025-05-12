@@ -1,15 +1,16 @@
 import './navbar.scss'
+import {Link} from 'react-router-dom'
 
 function Navbar() {
   return (
     <div className="navbar">
-        <img className='olxLogo' src="/olx_logo.png"/>
+        <Link to='/'><img className='olxLogo' src="/olx_logo.png"/></Link>
         <input type="text" className='locationInput'/>
         <input type="text" className='searchProduct'/>
         <div>English</div>
         <i class="bi bi-heart"></i>
         <div>Login</div>
-        <img src="/addButton.png" className='addProduct'/>
+        <Link to='/sell-product'><img src="/addButton.png" className='addProduct'/></Link>
     </div>
   )
 }

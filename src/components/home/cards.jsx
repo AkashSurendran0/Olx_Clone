@@ -1,31 +1,41 @@
 import './home.scss'
+import { useNavigate } from 'react-router-dom'
 
-function Cards() {
-  return (
-    <div className="container">
-        <div className="row g-3 products">
-            <div className="col-md-3">
-                <div className="productCard">
-                    <div className="productImage">
-                        <img src="/olx_logo.png"/>
-                    </div>
-                    <div className="productDetails">
-                        <div className="productAmount">
-                            ₹7000
+function Cards({products}) {
+    const navigate=useNavigate()
+    const getProductDetails = (product) =>{
+        navigate('/product-details', {state: product})
+    }
+
+    return (
+        <div className="container">
+            <div className="row g-3 products">
+                { products && products.map(product=>{
+                    return (
+                        <div className="col-md-3" onClick={()=>getProductDetails(product)}>
+                            <div className="productCard">
+                                <div className="productImage">
+                                    <img src={product.imageUrl}/>
+                                </div>
+                                <div className="productDetails">
+                                    <div className="productAmount">
+                                        ₹{product.price}
+                                    </div>
+                                    <div className="productName">
+                                        {product.name}
+                                    </div>
+                                    <div className="productDesc">
+                                        {product.description}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="productName">
-                            Shoes
-                        </div>
-                        <div className="productDesc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora expedita velit quia eum fuga earum itaque minima, quis nam eos sunt illo quas repellendus veniam deleniti accusamus labore ab rem.
-                        </div>
-                    </div>
-                </div>
+                        )
+                    }) 
+                }
             </div>
         </div>
-    </div>
-    
-  )
+    )
 }
 
 export default Cards

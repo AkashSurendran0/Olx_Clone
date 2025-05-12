@@ -1,10 +1,12 @@
-import React from 'react'
+import SellForm from "../components/sell/sellForm"
+import Navbar from "../components/navbar/navbar"
 
 function Sell() {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar/>
+      <SellForm/>
+    </>
   )
 }
 

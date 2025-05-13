@@ -63,7 +63,7 @@ function LoginForm() {
         createUserWithEmailAndPassword(auth, signUpDetails.email, signUpDetails.password)
         .then(()=>{
             toast.success('User created Successfully')
-            setLogged()
+            changeLog()
             navigate('/')
         })
         .catch((error)=>{
